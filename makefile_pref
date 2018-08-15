@@ -1,0 +1,9 @@
+compile:
+	g++ -m64 -fno-omit-frame-pointer -g nonPareil.cpp StartGame.cpp Instructions.cpp random.cpp print_array.cpp print_Sarray.cpp WannaPlay.cpp head.h
+run:	compile
+	./a.out 100000000 
+perf:	
+	perf record ./a.out
+	
+analyze:
+	perf report --stdio -g none --sort comm, dso -i ./a.perf.data

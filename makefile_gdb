@@ -1,0 +1,4 @@
+compile:
+	gcc -g nonPareil.c StartGame.c Instructions.c random.c print_array.c print_Sarray.c WannaPlay.c head.h -o nonPareil
+run:	compile
+	./nonPareil

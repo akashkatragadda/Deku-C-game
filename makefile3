@@ -1,0 +1,35 @@
+g = g++
+obj = -o
+com = -c
+objects = nonPareil.o head.h StartGame.o Instructions.o random.o print_array.o print_Sarray.o WannaPlay.o
+
+
+all:	all1
+	./nonPareil
+
+all1:	$(objects)
+	$(g) $(objects) $(obj) nonPareil
+	
+nonPareil.o:	nonPareil.cpp
+	$(g) $(com) nonPareil.cpp
+	
+StartGame.o:	StartGame.cpp
+	$(g) $(com) StartGame.cpp
+	
+Instructions.o:	Instructions.cpp
+	$(g) $(com) Instructions.cpp
+	
+random.o:	random.cpp
+	$(g) $(com) random.cpp
+	
+print_array.o:	print_array.cpp
+	$(g) $(com) print_array.cpp
+	
+print_Sarray.o:	print_Sarray.cpp
+	$(g) $(com) print_Sarray.cpp
+	
+WannaPlay.o:	WannaPlay.cpp
+	$(g) $(com) WannaPlay.cpp
+	
+clean:
+	rm *.o nonPareil

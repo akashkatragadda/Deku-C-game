@@ -1,0 +1,29 @@
+all:	all1
+	./nonPareil
+
+all1:	nonPareil.o head.h StartGame.o Instructions.o random.o print_array.o print_Sarray.o WannaPlay.o
+	g++ nonPareil.o StartGame.o Instructions.o random.o print_array.o print_Sarray.o WannaPlay.o -o nonPareil
+	
+nonPareil.o:	nonPareil.cpp
+	g++ -c nonPareil.cpp
+	
+StartGame.o:	StartGame.cpp
+	g++ -c StartGame.cpp
+	
+Instructions.o:	Instructions.cpp
+	g++ -c Instructions.cpp
+	
+random.o:	random.cpp
+	g++ -c random.cpp
+	
+print_array.o:	print_array.cpp
+	g++ -c print_array.cpp
+	
+print_Sarray.o:	print_Sarray.cpp
+	g++ -c print_Sarray.cpp
+	
+WannaPlay.o:	WannaPlay.cpp
+	g++ -c WannaPlay.cpp
+	
+clean:
+	rm *.o nonPareil

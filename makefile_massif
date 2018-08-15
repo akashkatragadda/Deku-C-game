@@ -1,0 +1,13 @@
+compile:
+	gcc -Wall -Werror -g nonPareil.c StartGame.c Instructions.c random.c print_array.c print_Sarray.c WannaPlay.c head.h
+run:	compile
+	valgrind ./a.out
+	
+cache:	
+	valgrind --tool=cachegrind ./a.out
+
+massif:
+	valgrind --tool=massif ./a.out
+
+massif2:
+	valgrind --tool=massif --time-unit=B ./a.out

@@ -1,0 +1,12 @@
+compile:
+	gcc -g -pg -no-pie nonPareil.c StartGame.c Instructions.c random.c print_array.c print_Sarray.c WannaPlay.c head.h
+run:	compile
+	./a.out
+gprof:	
+	gprof -lb a.out gmon.out
+g:
+	gprof a.out gmon.out
+t:
+	time ./a.out
+cachegrind:
+	valgrind --tool=cachegrind --L2=4194304,2,64 ./a.out

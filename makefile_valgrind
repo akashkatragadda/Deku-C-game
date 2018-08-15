@@ -1,0 +1,7 @@
+compile:
+	g++ -Wall -Werror -g nonPareil.cpp StartGame.cpp Instructions.cpp random.cpp print_array.cpp print_Sarray.cpp WannaPlay.cpp head.h
+run:	compile
+	valgrind ./a.out
+	
+cache:	
+	valgrind --tool=cachegrind ./a.out

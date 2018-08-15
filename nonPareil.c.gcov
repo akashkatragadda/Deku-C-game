@@ -1,0 +1,53 @@
+        -:    0:Source:nonPareil.c
+        -:    0:Graph:nonPareil.gcno
+        -:    0:Data:nonPareil.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <string.h>
+        -:    4:#include <time.h>
+        -:    5:#include "head.h"
+        -:    6:
+        2:    7:int main()
+        -:    8:{
+        -:    9:	
+        -:   10:	int guess[13][4];
+        -:   11:	char  correctness[13][4];
+        -:   12:	int i,j,ch;
+       26:   13:	for(i=0;i<12;i++)
+        -:   14:	{
+      120:   15:		for(j=0;j<4;j++)
+       96:   16:			correctness[i][j]=('G');
+        -:   17:	}
+        -:   18:	
+        2:   19:	printf("\n\n	*****  nonPareil: Let the Game begins!  ***** \n\n");
+        2:   20:	printf("1. Play\n");
+        2:   21:	printf("2. Instructions\n");
+        2:   22:	printf("3. Exit\n\n\nEnter your choice: ");
+        2:   23:	scanf("%d",&ch);
+        -:   24:	
+        -:   25:	while(1)
+        -:   26:	{
+        2:   27:		switch(ch)
+        -:   28:		{
+        -:   29:			case 1:
+    #####:   30:				StartGame(guess, correctness, 13, 4);
+    #####:   31:				break;
+        -:   32:			case 2:
+        1:   33:				Instructions();
+    #####:   34:				break;
+        -:   35:			case 3:
+        1:   36:				exit(0);
+        -:   37:			default:
+        -:   38:			{
+    #####:   39:				printf("\nSorry, Wrong Input! Please Try Again.");
+    #####:   40:				main();
+        -:   41:			}
+        -:   42:		}
+        -:   43:	}
+        -:   44:	return 0;
+        -:   45:}
+        -:   46:
+        -:   47:
+        -:   48:
